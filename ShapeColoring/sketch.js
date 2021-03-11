@@ -1,20 +1,24 @@
 function setup() {
   createCanvas(400, 400);
+  background(220);
+  c = color('white');
+  fill(c);
+  circle(200, 200, 200);
 }
 
 function draw() {
-  background(220);
-  let c = color(255, 204, 0);
-  fill(c);
-  noStroke();
-  rect(30, 20, 55, 55);
-  c = color(300, 44, 90);
-  fill(c);
-  noStroke();
-  circle(350, 70, 70);
-  c = color(10, 76, 234);
-  fill(c);
-  noStroke();
-  triangle(150, 75, 180, 20, 210, 75);
   
+  if(mouseIsPressed)
+    {
+      if (dist(mouseX, mouseY, 200, 200,) < 100)
+        {
+          stroke('green');
+          line(mouseX, mouseY, pmouseX, pmouseY);
+        }
+      else
+        {
+          stroke('red');
+          line(mouseX, mouseY, pmouseX, pmouseY);
+        }
+    }
 }
